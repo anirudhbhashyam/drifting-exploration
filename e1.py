@@ -91,12 +91,19 @@ def process_args() -> argparse.Namespace:
         default=200,
         help="The number of simulation steps.",
     )
+    _ = processor.add_argument(
+        "--seed",
+        type=int,
+        default=0,
+        help="The random seed value to use.",
+    )
     return processor.parse_args()
 
 
 def main(args: argparse.Namespace) -> int:
+    # Points collapse to the origin
     n_steps = args.n_steps
-    random.seed(0)
+    random.seed(args.seed)
     points = [
         Point(x, y) for x, y in itertools.product(range(-100, 100), range(-100, 100))
     ]
