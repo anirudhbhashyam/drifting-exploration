@@ -1,4 +1,4 @@
-# Drfiting
+# Drifting
 Exploring drifting from Kaiming He's [paper](https://arxiv.org/abs/2602.04770)
 
 ## Experiments
